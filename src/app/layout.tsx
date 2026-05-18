@@ -23,6 +23,7 @@ import { CartProvider } from "@/context/CartContext";
 import { CartSheet } from "@/components/cart/CartSheet";
 import { AuthProvider } from "@/components/auth/AuthProvider";
 import { Toaster } from "@/components/ui/sonner";
+import { ChatWidget } from "@/components/chat/ChatWidget";
 
 export default function RootLayout({
   children,
@@ -42,6 +43,7 @@ export default function RootLayout({
             </main>
             <Footer />
             <CartSheet />
+            <ChatWidget />
             <Toaster />
           </CartProvider>
         </AuthProvider>
