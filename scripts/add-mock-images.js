@@ -1,9 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const TIRE_IMAGE = "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&q=80&w=800";
-const BATTERY_IMAGE = "https://images.unsplash.com/photo-1621252179027-94459d278660?auto=format&fit=crop&q=80&w=800";
-const OIL_IMAGE = "https://images.unsplash.com/photo-1600045437813-2d19ebf856f7?auto=format&fit=crop&q=80&w=800";
+const TIRE_IMAGE = "https://loremflickr.com/600/600/tire,wheel/all";
+const BATTERY_IMAGE = "https://loremflickr.com/600/600/carbattery/all";
+const OIL_IMAGE = "https://loremflickr.com/600/600/motoroil/all";
 
 async function main() {
   console.log('Starting to add mock images...');
@@ -13,9 +13,7 @@ async function main() {
   
   for (const product of products) {
     // Check if the product already has images
-    if (product.images && product.images.length > 0) {
-        continue;
-    }
+    // Overwrite existing images
 
     const name = product.name.toLowerCase();
     let imageUrl = '';
