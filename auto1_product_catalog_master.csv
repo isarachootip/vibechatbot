@@ -1,0 +1,17 @@
+SKU,Category,Brand,Product_Name,Size_or_Spec,Regular_Price,Promotion_Price,Promotion_Detail,Stock_Status
+TY-MIC-001,Tire,Michelin,Primacy 4,215/60R16,4500,,ซื้อ 3 แถม 1,In Stock
+TY-MIC-002,Tire,Michelin,Primacy 4,215/55R17,5200,,ซื้อ 3 แถม 1,In Stock
+TY-MIC-003,Tire,Michelin,Primacy 4,185/60R15,3200,,ส่วนลด 5%,In Stock
+TY-BS-001,Tire,Bridgestone,Turanza T005A,215/60R16,4200,,ฟรีตั้งศูนย์ถ่วงล้อ,In Stock
+TY-BS-002,Tire,Bridgestone,Dueler H/T 684,265/60R18,6500,,ซื้อ 3 แถม 1,In Stock
+TY-BS-003,Tire,Bridgestone,Ecopia EP300,185/60R15,3000,,ฟรีตั้งศูนย์ถ่วงล้อ,In Stock
+TY-YK-001,Tire,Yokohama,BluEarth-GT AE51,215/50R17,4100,,รับประกัน 100 วัน,In Stock
+TY-MX-001,Tire,Maxxis,HP5,215/55R17,2500,,ยางราคาประหยัด,In Stock
+BT-GS-001,Battery,GS,MFX-60L,46B24L,2200,1800,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-GS-002,Battery,GS,MFX-80L,75D23L,2600,2200,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-GS-003,Battery,GS,MFX-190L,105D31L,3200,2800,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-GS-004,Battery,GS,LN4-DIN85,LN4 (DIN85),3500,3100,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-PM-001,Battery,Puma,50B24L SMF,46B24L,2500,2100,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-PM-002,Battery,Puma,75D23L SMF,75D23L,2800,2400,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-FB-001,Battery,FB,S-65L,46B24L,2100,1750,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-FB-002,Battery,FB,Q-85 (ISS),Q85 (ISS),3000,2600,รองรับระบบ Start-Stop,In Stock

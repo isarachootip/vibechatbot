@@ -1,0 +1,8 @@
+Car_Brand,Car_Model,Start_Year,End_Year,Engine_Trim,Standard_Tire_Size,Alternative_Tire_Size,Battery_Type,Battery_Amp,Battery_Terminal
+Toyota,Camry,2012,2018,2.0G / 2.5G,215/60R16,215/55R17,75D23L,65,L
+Toyota,Camry,2012,2018,2.5 Hybrid,215/55R17,,S65D26R (Hybrid),65,R
+Honda,Civic,2016,2021,1.8 E,215/55R16,215/50R17,46B24L,45,L
+Honda,Civic,2016,2021,1.5 RS Turbo,215/50R17,,46B24L,45,L
+Isuzu,D-Max,2012,2019,2.5 / 3.0 V-Cross,255/60R18,265/60R18,105D31L,90,L
+Isuzu,D-Max,2012,2019,1.9 Ddi Blue Power,245/70R16,,LN4 (DIN85),85,LN
+Nissan,Almera,2011,2019,1.2 E / V / VL,185/65R15,,46B24L,45,L

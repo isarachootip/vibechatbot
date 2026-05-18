@@ -1,0 +1,6 @@
+SKU,Category,Brand,Product_Name,Size_or_Spec,Regular_Price,Promotion_Price,Promotion_Detail,Stock_Status
+TY-MIC-001,Tire,Michelin,Primacy 4,215/60R16,4500,,ซื้อ 3 แถม 1,In Stock
+TY-BS-001,Tire,Bridgestone,Turanza T005A,215/60R16,4200,,ส่วนลด 10%,In Stock
+BT-GS-001,Battery,GS,MFX-60L,46B24L,2200,1800,ราคารวมเทิร์นแบตเก่า,In Stock
+BT-PM-001,Battery,Puma,50B24L SMF,46B24L,2500,2100,ราคารวมเทิร์นแบตเก่า,In Stock
+SV-OIL-001,Service,Mobil1,น้ำมันเครื่องสังเคราะห์แท้ 5W-30,4L,1800,1500,ฟรีไส้กรองและค่าแรง,In Stock
