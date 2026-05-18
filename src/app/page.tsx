@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 import { Product } from "@/types";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { BranchesSection } from "@/components/layout/BranchesSection";
 
 export const dynamic = "force-dynamic";
 
@@ -76,6 +77,9 @@ export default async function Home() {
           )}
         </div>
       </section>
+
+      {/* Branches Section */}
+      <BranchesSection />
     </div>
   );
 }
