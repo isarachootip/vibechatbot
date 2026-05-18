@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Joy Cafe - Food & Drink",
-  description: "Order your favorite food and drinks online from Joy Cafe.",
+  title: "Fastauto Service - Auto1",
+  description: "ศูนย์บริการรถยนต์ครบวงจร Fastauto Service",
 };
 
 import { Navbar } from "@/components/layout/Navbar";

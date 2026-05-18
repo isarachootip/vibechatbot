@@ -11,7 +11,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const BANNERS = [
     {
         id: 1,
-        title: "Welcome to Joy Cafe",
+        title: "Welcome to Fastauto Service",
         description: "Experience the perfect blend of premium coffee and cozy vibes.",
         image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=2000",
         cta: "Order Now",

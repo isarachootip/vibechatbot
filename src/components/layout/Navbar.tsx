@@ -17,7 +17,7 @@ export function Navbar() {
                 <div className="mr-4 flex">
                     <Link href="/products" className="mr-6 flex items-center space-x-2">
                         <span className="font-bold inline-block text-xl tracking-tight text-primary">
-                            Joy Cafe
+                            Fastauto Service
                         </span>
                     </Link>
                     {/* Desktop Navigation - Storefront */}

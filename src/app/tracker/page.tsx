@@ -1,7 +1,7 @@
 import { OrderTracker } from "@/components/order/OrderTracker";
 
 export const metadata = {
-    title: "ติดตามสถานะ - Joy Cafe",
+    title: "ติดตามสถานะ - Fastauto Service",
     description: "ตรวจสอบสถานะคำสั่งซื้อของคุณได้ที่นี่",
 };
 

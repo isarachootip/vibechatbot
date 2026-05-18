@@ -219,7 +219,7 @@ export function OrderManagement({ initialOrders }: Props) {
             <body>
                 <div class="label">
                     <div class="header">
-                        <div style="font-size: 18px; font-weight: bold;">JOY CAFE</div>
+                        <div style="font-size: 18px; font-weight: bold;">FASTAUTO SERVICE</div>
                         <div class="order-number">#${order.orderNumber || order.id.slice(-6).toUpperCase()}</div>
                         ${order.queueNumber ? `<div class="queue-number">${order.queueNumber}</div>` : ''}
                         <div style="font-size: 10px; color: #666;">${new Date(order.createdAt).toLocaleString('th-TH')}</div>

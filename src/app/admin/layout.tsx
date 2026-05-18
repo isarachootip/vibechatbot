@@ -22,7 +22,7 @@ export default async function AdminLayout({
             <aside className="w-full bg-slate-900 text-white md:w-64 md:min-h-screen flex-shrink-0">
                 <div className="p-6 border-b border-slate-700">
                     <h2 className="text-xl font-bold tracking-tight">Admin Console</h2>
-                    <p className="text-xs text-slate-400 mt-1">Joy Cafe Management</p>
+                    <p className="text-xs text-slate-400 mt-1">Fastauto Service Management</p>
                 </div>
 
                 <nav className="flex flex-col p-4 space-y-2">
