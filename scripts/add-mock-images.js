@@ -1,9 +1,9 @@
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
-const TIRE_IMAGE = "https://loremflickr.com/600/600/tire,wheel/all";
-const BATTERY_IMAGE = "https://loremflickr.com/600/600/carbattery/all";
-const OIL_IMAGE = "https://loremflickr.com/600/600/motoroil/all";
+const TIRE_IMAGE = "https://placehold.co/600x600/1e293b/ffffff/png?text=Car+Tire";
+const BATTERY_IMAGE = "https://placehold.co/600x600/e11d48/ffffff/png?text=Car+Battery";
+const OIL_IMAGE = "https://placehold.co/600x600/f59e0b/ffffff/png?text=Motor+Oil";
 
 async function main() {
   console.log('Starting to add mock images...');
