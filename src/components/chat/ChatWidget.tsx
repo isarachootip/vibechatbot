@@ -44,10 +44,14 @@ export function ChatWidget() {
     setIsLoading(true);
 
     try {
+      const newMessages = [...messages, newUserMsg];
       const res = await fetch("/api/auto1-chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({ 
+          message: userMessage,
+          history: newMessages.slice(-5) // Send last 5 messages for context
+        }),
       });
 
       const data = await res.json();
