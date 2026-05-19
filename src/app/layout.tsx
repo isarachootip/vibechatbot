@@ -16,14 +16,9 @@ export const metadata: Metadata = {
   title: "Fastauto Service - Auto1",
   description: "ศูนย์บริการรถยนต์ครบวงจร Fastauto Service",
 };
-
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
 import { CartProvider } from "@/context/CartContext";
-import { CartSheet } from "@/components/cart/CartSheet";
 import { AuthProvider } from "@/components/auth/AuthProvider";
-import { Toaster } from "@/components/ui/sonner";
-import { ChatWidget } from "@/components/chat/ChatWidget";
+import { ClientLayoutWrapper } from "@/components/layout/ClientLayoutWrapper";
 
 export default function RootLayout({
   children,
@@ -37,14 +32,9 @@ export default function RootLayout({
       >
         <AuthProvider>
           <CartProvider>
-            <Navbar />
-            <main className="flex-1">
+            <ClientLayoutWrapper>
               {children}
-            </main>
-            <Footer />
-            <CartSheet />
-            <ChatWidget />
-            <Toaster />
+            </ClientLayoutWrapper>
           </CartProvider>
         </AuthProvider>
       </body>

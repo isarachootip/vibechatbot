@@ -25,6 +25,10 @@ export async function POST(request: Request) {
     // เรียกใช้ Gemini API
     const genAI = new GoogleGenerativeAI(apiKey);
 
+    // ดึงฐานความรู้ (KM)
+    const kbs = await prisma.knowledgeBase.findMany({ where: { isActive: true } });
+    const kmText = kbs.map(kb => `Q: ${kb.question}\nA: ${kb.answer}`).join('\n\n');
+
     // ==========================================
     // 🧠 1. ส่งให้ Gemini วิเคราะห์เจตนา (Intent Extraction)
     // แทนที่จะใช้ if-else ธรรมดา เราให้ AI ดึงคีย์เวิร์ดมาเลย
@@ -36,7 +40,11 @@ export async function POST(request: Request) {
 
     const prompt = `
       คุณคือผู้ช่วย AI วิเคราะห์ข้อมูลของศูนย์บริการรถยนต์ Auto1
-      นี่คือประวัติการสนทนาที่ผ่านมา (Context):
+      
+      [คู่มือความรู้ของร้าน (Knowledge Base)]
+      ${kmText ? kmText : "ยังไม่มีข้อมูลเพิ่มเติม"}
+      
+      [ประวัติการสนทนาที่ผ่านมา (Context)]
       ${historyText}
       
       ลูกค้าตอบล่าสุดว่า: "${userMessage}"
@@ -47,6 +55,7 @@ export async function POST(request: Request) {
       - "year": ปีรถ เป็นตัวเลข ค.ศ. เท่านั้น (ดึงจากประวัติแชทได้เช่นกัน ถ้าไม่ระบุปีให้เป็น null)
       - "queryType": "battery" ถ้าลูกค้าถามเรื่องแบตเตอรี่, "tire" ถ้าถามเรื่องยางรถ, หรือ "both" ถ้าถามทั้งคู่, หรือ "other" ถ้าเป็นเรื่องอื่น
       - "location": สาขาหรือพื้นที่ที่ลูกค้าสนใจ (ถ้ามี) เช่น "รามอินทรา", "บางนา" (ถ้าไม่มีให้เป็น null)
+      - "directAnswer": ถ้าลูกค้าถามคำถามที่ตรงกับ Knowledge Base ให้คุณสรุปคำตอบใส่ใน field นี้ (ถ้าไม่มีให้เป็น null)
     `;
 
     const result = await model.generateContent(prompt);
@@ -55,7 +64,7 @@ export async function POST(request: Request) {
     // Clean JSON (เผื่อ Gemini ตอบกลับมาพร้อมกับ markdown tags)
     extractedText = extractedText.replace(/```json/g, '').replace(/```/g, '').trim();
     
-    let intent = { carBrand: null, carModel: null, year: null, queryType: 'other' };
+    let intent = { carBrand: null, carModel: null, year: null, queryType: 'other', location: null, directAnswer: null };
     try {
         intent = JSON.parse(extractedText);
         console.log("🧠 AI Extracted Intent:", intent);
@@ -67,6 +76,11 @@ export async function POST(request: Request) {
     // ⚙️ 2. ค้นหาข้อมูลจาก Database (RAG Process)
     // ==========================================
     let responseText = "";
+
+    // ถ้ามีคำตอบตรงจาก Knowledge Base ให้ตอบไปเลย
+    if (intent.directAnswer) {
+        return NextResponse.json({ reply: intent.directAnswer });
+    }
 
     if (intent.carModel) {
       // สร้างเงื่อนไขการค้นหาในฐานข้อมูล

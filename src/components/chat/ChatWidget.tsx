@@ -13,6 +13,14 @@ interface Message {
 
 export function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    // แจ้งเตือน Parent Window (เว็บไซต์ของลูกค้าที่เอา iframe ไปแปะ)
+    if (typeof window !== "undefined" && window.parent) {
+      window.parent.postMessage(isOpen ? 'auto1-chat-open' : 'auto1-chat-close', '*');
+    }
+  }, [isOpen]);
+
   const [messages, setMessages] = useState<Message[]>([
     {
       id: "1",
