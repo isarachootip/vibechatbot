@@ -28,7 +28,7 @@ export async function POST(request: Request) {
     // 🧠 1. ส่งให้ Gemini วิเคราะห์เจตนา (Intent Extraction)
     // แทนที่จะใช้ if-else ธรรมดา เราให้ AI ดึงคีย์เวิร์ดมาเลย
     // ==========================================
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
     
     const prompt = `
       คุณคือผู้ช่วย AI วิเคราะห์ข้อมูลของศูนย์บริการรถยนต์ Auto1
